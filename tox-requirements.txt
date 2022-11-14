@@ -1,0 +1,2 @@
+/home/leolex/SW/pycharm-community-2021.3.3/my_git01/ansible/playbook_8.5/roles/clickhouse/molecule/centos_8/molecule.yml
+
