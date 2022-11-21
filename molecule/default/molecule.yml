@@ -4,19 +4,29 @@ dependency:
 driver:
   name: podman
 platforms:
-  - name: centos_7
-    image: centos:7
-    pre_build_image: true
-  - name: centos_8
-    image: centos:8_update
-    pre_build_image: true
-  - name: ubuntu
-    image: ubuntu:python
-    pre_build_image: true
-  - name: instance
-    image: quay.io/centos/centos:stream8
-    pre_build_image: true
+ - name: ubuntu
+   image: docker.io/pycontribs/ubuntu:latest
+   pre_build_image: true
+   privileged: true
 provisioner:
   name: ansible
+playbooks:
+  prepare: prepare.yml
 verifier:
-  name: ansible
+  name: ansible     
+#  - name: centos_7
+#    image: centos:7
+#    pre_build_image: true
+#  - name: centos_8
+#    image: centos:8_update
+#    pre_build_image: true
+#  - name: ubuntu
+#    image: ubuntu:python
+#    pre_build_image: true
+#  - name: instance
+#    image: quay.io/centos/centos:stream8
+#    pre_build_image: true
+#provisioner:
+#  name: ansible
+#verifier:
+#  name: ansible
